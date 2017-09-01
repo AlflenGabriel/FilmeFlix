@@ -5,8 +5,7 @@ public class Usuario {
 	private String sexo;
 	private int idade;
 	
-	
-	
+		
 	
 	public Usuario(String nome, String sexo, int idade) {		
 		this.nome = nome;
