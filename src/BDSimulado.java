@@ -4,6 +4,7 @@ public class BDSimulado {
 	
 	private ArrayList<Filme> filmes;
 	private ArrayList<Usuario> usuarios;
+	private ArrayList<Avaliacao> avaliacoes;
 	
 	public BDSimulado(){
 		this.filmes = new ArrayList<Filme>();
@@ -37,6 +38,12 @@ public class BDSimulado {
 		this.usuarios.add(u4);
 		this.usuarios.add(u5);
 		this.usuarios.add(u6);
+		
+		/*
+		this.avaliacoes = new ArrayList<Avaliacao>();
+		
+		Avaliacao a1 = new Avaliacao(u1, 5);
+		*/
 	}
 
 	public ArrayList<Filme> getFilmes() {
@@ -77,4 +84,20 @@ public class BDSimulado {
 
 		return resultado;
 	}
+	
+	public ArrayList<Filme> getFilmesPorGenero(String genero){
+		
+		ArrayList<Filme> resultado = new ArrayList<Filme>();
+		
+		
+		for (int i = 0; i < this.filmes.size(); i++) {
+			
+			if (this.filmes.get(i).getGenero().equals(genero)) {
+				resultado.add(this.filmes.get(i));
+			}
+		}
+
+		return resultado;
+	}
+	
 }
