@@ -10,10 +10,10 @@ public class BDSimulado {
 		
 		Filme f1 = new Filme("Star Wars 1", "Marcos Vinicios", 1997, "Ficção Cientifica");
 		Filme f2 = new Filme("Star Wars: O Despertar da Força", "Marcos Vinicios", 2015, "Ficção Cientifica");
-		Filme f3 = new Filme("Forrest Gump", " Robert Zemeckis", 1994, "Drama");
+		Filme f3 = new Filme("Forrest Gump", "Robert Zemeckis", 1994, "Drama");
 		Filme f4 = new Filme("Clube da Luta", "David Fincher", 1999, "Drama");
-		Filme f5 = new Filme("Os Outros", " Alejandro Amenábar", 2001, "Suspense");
-		Filme f6 = new Filme("Titanic", " James Cameron", 1997, "Drama");
+		Filme f5 = new Filme("Os Outros", "Alejandro Amenábar", 2001, "Suspense");
+		Filme f6 = new Filme("Titanic", "James Cameron", 1997, "Drama");
 		
 		this.filmes.add(f1);
 		this.filmes.add(f2);
@@ -47,4 +47,34 @@ public class BDSimulado {
 		return usuarios;
 	}
 	
+	public ArrayList<Filme> getFilmesPorAno(int ano){
+		
+		ArrayList<Filme> resultado = new ArrayList<Filme>();
+		
+		
+		for (int i = 0; i < this.filmes.size(); i++) {
+			
+			if (this.filmes.get(i).getAnoLancamento() == ano) {
+				resultado.add(this.filmes.get(i));
+			}		
+		}
+		
+		return resultado;
+	}
+	
+	
+	public ArrayList<Filme> getFilmesPorDiretor(String diretor){
+		
+		ArrayList<Filme> resultado = new ArrayList<Filme>();
+		
+		
+		for (int i = 0; i < this.filmes.size(); i++) {
+			
+			if (this.filmes.get(i).getDiretor().equals(diretor)) {
+				resultado.add(this.filmes.get(i));
+			}
+		}
+
+		return resultado;
+	}
 }
